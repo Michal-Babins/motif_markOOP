@@ -76,15 +76,15 @@ def long_gene():
 my_dict = {} #set main dict
 ''' Retrieving header and sequence information from the fasta '''
 with open(input_file, "r") as fa:
-    main_dict = {} #fill the fasta dict header key and 
+    my_dict = {} #fill the fasta dict header key and seq as value
     for line in fa:
         line = line.strip()
         #grab header
         if line[0] == '>':
             header = line
             seq = ''
-        #grab seq
-        elif line[0] != '>':
+	#grab seq        
+	elif line[0] != '>':
             seq += line
             my_dict[header] = (seq) 
 
